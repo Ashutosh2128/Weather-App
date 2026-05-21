@@ -24,7 +24,8 @@ function switchTab(newTab) {
             //kya search form bala container is invisible, if yes then make it visible
             userInfoContainer.classList.remove("active");
             grantAccessContainer.classList.remove("active");
-            searchForm.classList.add("active"); 
+            searchForm.classList.add("active");
+            errorContainer.classList.remove('active'); // while no internet connection and before fetching city data to remove this part
         }
         else {
             //me pehele search wale tab par tha, ab your weather tab visible karna padega
