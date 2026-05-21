@@ -30,6 +30,8 @@ function switchTab(newTab) {
             //me pehele search wale tab par tha, ab your weather tab visible karna padega
             searchForm.classList.remove("active");
             userInfoContainer.classList.remove("active");
+            // Updated this following part - while there is no internet connection and before grant access clicked, this will hide the error container.
+            errorContainer.classList.remove('active');
             //ab main your weather tab me aagya hu, toh weather bhi display karna padega, so let's check local storage first for coordinates, if we have saved them there
             getfromSessionStorage();
         }
@@ -84,6 +86,8 @@ async function fetchUserWeatherInfo(coordinates) {
         loadingScreen.classList.remove("active");
         //HW
         alert("User info not found");
+        //After alert this following will show 404 not found error
+        errorContainer.classList.add('active');
     }
 }
 
